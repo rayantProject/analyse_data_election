@@ -1,8 +1,11 @@
 import pandas as pd
+import os
 
 
 class First_round_analyse:
     file = "src/res/election/firstround.xlsx"
+    ideologiesOfCandidatesFile = "src/res/election/canditats_ideologies.json"
+
     removeColumns = [
         "Etat saisie",
         "Unnamed: 27",
@@ -32,8 +35,10 @@ class First_round_analyse:
     ]
 
     renameColumns = {
-        "nom": "ARTHAUD",
-        "prenom": "NATHALIE",
+        "Libellé de la commune": "commune",
+        "Libellé du département": "department",
+        "Nom": "ARTHAUD",
+        "prénom": "NATHALIE",
         "Voix": "voix Nathalie Arthaud",
         "Voix/Ins": "voix/ins Nathalie Arthaud",
         "Voix/Exp": "voix/exp Nathalie Arthaud",
@@ -98,6 +103,21 @@ class First_round_analyse:
         self.df = pd.read_excel(self.file)
         self.df = self.df.drop(columns=self.removeColumns)
         self.df = self.df.rename(columns=self.renameColumns)
+        ideologies = pd.read_json(self.ideologiesOfCandidatesFile)
+        for index, row in ideologies.iterrows():
+            self.df["ideologies " + row["candidat"]] = row["ideologies"]
 
     def get_data(self):
         return self.df
+
+    def create_csv(self):
+        if not os.path.exists("src/res/election/firstround_worked.csv"):
+            self.df.to_csv("src/res/election/firstround.csv", index=False)
+        else:
+            print("File already exists")
+
+    def filter_by_department(self, department="Rhône"):
+        return self.df[self.df["department"] == department]
+
+    def get_communes_only_by_department(self, department="Rhône"):
+        return self.filter_by_department(department)["commune"]

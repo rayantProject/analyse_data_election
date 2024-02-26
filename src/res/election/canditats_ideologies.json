@@ -1,0 +1,46 @@
+[
+  {
+      "candidat": "Emmanuel Macron",
+      "ideologies": "Centrisme, Pro-européen, Libéralisme, Centre"
+  },
+  {
+      "candidat": "Marine Le Pen",
+      "ideologies": "Extrême droite, Nationalisme"
+  },
+  {
+      "candidat": "Jean-Luc Mélenchon",
+      "ideologies": "Gauche radicale, Écologisme"
+  },
+  {
+      "candidat": "Éric Zemmour",
+      "ideologies": "Droite, Nationalisme"
+  },
+  {
+      "candidat": "Valérie Pécresse",
+      "ideologies": "Centre-droit, Sécurité intérieure"
+  },
+  {
+      "candidat": "Yannick Jadot",
+      "ideologies": "Écologisme, Justice sociale"
+  },
+  {
+      "candidat": "Jean Lassalle",
+      "ideologies": "Indépendant, Rural"
+  },
+  {
+      "candidat": "Fabien Roussel",
+      "ideologies": "Communisme, Austérité"
+  },
+  {
+      "candidat": "Nicolas Dupont-Aignan",
+      "ideologies": "Souverainisme, Indépendance"
+  },
+  {
+      "candidat": "Anne Hidalgo",
+      "ideologies": "Socialisme, Écologisme"
+  },
+  {
+      "candidat": "Philippe Poutou",
+      "ideologies": "Gauche radicale, Anticapitalisme"
+  }
+]
