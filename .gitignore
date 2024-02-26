@@ -3,3 +3,12 @@
 venv
 __pycache__
 test.ipynb
+generate
+.DS_Store
+*.DS_Store
+
+**/.DS_Store
+**/__pycache__
+**/._*
+
+.DS_Store?
