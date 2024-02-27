@@ -118,12 +118,10 @@ class First_round_analyse:
             if not os.path.exists("src/res/generate/firstround.csv"):
                 self.df.to_csv("src/res/generate/firstround.csv", index=False)
             else:
-                print("File already exists")    
+                print("File already exists")
 
     def filter_by_department(self, department="Rhône"):
         return self.df[self.df["department"] == department]
 
     def get_communes_only_by_department(self, department="Rhône"):
         return self.filter_by_department(department)["commune"]
-
-  
