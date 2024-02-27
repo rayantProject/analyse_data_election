@@ -53,7 +53,7 @@ pip install -r requirements.txt
 
 **Utilisation**
 
-Pour utiliser le projet, exécutez le fichier `main.ipynb` dans le terminal :
+Pour utiliser le projet, exécutez le fichier `main.py` dans le terminal :
 
 ```
 python main.py
