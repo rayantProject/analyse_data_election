@@ -6,7 +6,7 @@ test.ipynb
 generate
 .DS_Store
 *.DS_Store
-
+dist
 **/.DS_Store
 **/__pycache__
 **/._*

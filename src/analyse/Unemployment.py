@@ -7,9 +7,9 @@ class Unemployment_analyse:
 
     removeRows = [0, 1, 2, 3]
 
-    headers = ["code", "commune", "annee", "nb_chomeurs"]
+    headers = ["code_insee", "commune", "annee", "nb_chomeurs"]
 
-    removeColumns = ["code", "annee"]
+    removeColumns = ["annee"]
 
     def __init__(self):
         self.df = pd.read_excel(self.file, skiprows=self.removeRows, names=self.headers)
@@ -22,9 +22,12 @@ class Unemployment_analyse:
     def create_csv(self):
         if not os.path.exists("src/res/generate"):
             os.makedirs("src/res/generate")
-            self.df.to_csv("src/res/generate/unemployment.csv", index=False)
+            self.df.to_csv("src/res/generate/unemployment_worked.csv", index=False)
         else:
-            if not os.path.exists("src/res/generate/unemployment.csv"):
-                self.df.to_csv("src/res/generate/unemployment.csv", index=False)
+            if not os.path.exists("src/res/generate/unemployment_worked.csv"):
+                self.df.to_csv("src/res/generate/unemployment_worked.csv", index=False)
             else:
-                print("File already exists")
+                self.df.to_csv("src/res/generate/unemployment_worked.csv", index=False)
+
+    def filter_post_code_by_start(self, start="69"):
+        return self.df[self.df["code_insee"].astype(str).str.startswith(start)]
