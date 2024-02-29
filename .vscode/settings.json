@@ -1,7 +1,8 @@
 {
     "workbench.editorAssociations": {
         "file:/**/*.xlsx": "jupyter-data-wrangler",
-        "file:/**/*.csv": "jupyter-data-wrangler"
+        "file:/**/*.csv": "jupyter-data-wrangler",
+        "*.csv": "jupyter-data-wrangler"
     },
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter"
